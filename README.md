@@ -15,9 +15,6 @@ cd concava-setup-mysql-mqtt
 cp .env.sample .env
 # > Edit configuration in .env
 docker-compose up -d
-
-# Migrate database
-docker-compose run mariadb bash -c 'TERM=dumb mysql --host=mariadb --user="$MYSQL_USER" --password="$MYSQL_PASSWORD" --database="$MYSQL_DATABASE" < /database.sql'
 ```
 
 **Note:** The MQTT server is lazy loaded, so it becomes available after processing the first sensor data.
