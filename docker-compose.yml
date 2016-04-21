@@ -2,6 +2,7 @@ mongodb:
     image: tutum/mongodb:3.2
     environment:
         AUTH: "no"
+    restart: always
 mariadb:
     image: mariadb:10.1
     env_file: .env
@@ -9,7 +10,7 @@ mariadb:
         - "3306:3306"
     volumes:
         - ./tools/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
-    restart: on-failure:99
+    restart: always
 concava:
     build: .
     env_file: .env
@@ -21,4 +22,4 @@ concava:
     links:
         - mariadb
         - mongodb
-    restart: on-failure:99
+    restart: always
