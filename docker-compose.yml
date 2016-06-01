@@ -6,6 +6,9 @@ mongodb:
 mariadb:
     image: mariadb:10.1
     env_file: .env
+    environment:
+        # Fix https://goo.gl/fUTycl
+        MYSQL_HOST:
     ports:
         - "3306:3306"
     volumes:
