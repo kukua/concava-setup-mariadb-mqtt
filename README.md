@@ -15,7 +15,6 @@ cd concava-setup-mysql-mqtt
 cp .env.example .env
 chmod 600 .env
 # > Edit configuration in .env
-touch concava.log # See docker-compose.yml
 docker-compose up -d
 ```
 
