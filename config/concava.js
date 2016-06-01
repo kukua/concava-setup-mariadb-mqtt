@@ -1,5 +1,5 @@
-import { auth, metadata } from 'concava-adapter-mysql'
-import { storage } from 'concava-adapter-mqtt'
+const adapter = require('concava-adapter-mysql')
+const storage = require('concava-adapter-mqtt').storage
 
 var config = {
 	host: 'mariadb',
@@ -9,20 +9,22 @@ var config = {
 	timeout: 3000, // ms
 }
 
-export default {
+module.exports = {
 	debug: true,
-	port: 3000,
+	// logFile: '/tmp/output.log',
+	// logName: 'concava',
+	// port: 3000,
 	payloadMaxSize: '512kb',
 	auth: {
 		enabled: true,
 		header: 'Authorization',
 		byToken: true,
-		method: auth,
-		config,
+		method: adapter.auth,
+		config: config,
 	},
 	metadata: {
-		method: metadata,
-		config,
+		method: adapter.metadata,
+		config: config,
 	},
 	storage: {
 		method: storage,

@@ -22,6 +22,7 @@ concava:
         - "1883:1883"
     volumes:
         - ./config/concava.js:/data/config.js:ro
+        - ./concava.log:/tmp/output.log
     links:
         - mariadb
         - mongodb
