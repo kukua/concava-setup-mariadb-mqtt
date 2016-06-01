@@ -13,6 +13,7 @@
 git clone https://github.com/kukua/concava-setup-mysql-mqtt
 cd concava-setup-mysql-mqtt
 cp .env.sample .env
+chmod 600 .env
 # > Edit configuration in .env
 docker-compose up -d
 ```
@@ -30,3 +31,9 @@ echo '00000539' | xxd -r -p | \
 
 # TODO(mauvm): Add script for debugging published MQTT data
 ```
+
+## License
+
+This software is licensed under the [MIT license](https://github.com/kukua/concava-setup-mysql-mqtt/blob/master/LICENSE).
+
+© 2016 Kukua BV
