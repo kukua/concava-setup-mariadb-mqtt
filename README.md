@@ -1,11 +1,6 @@
 # ConCaVa with MySQL and MQTT
 
-> This setup uses MySQL for authentication & metadata storage, MongoDB for data storage and MQTT for publishing the data.
-
-## Requirements
-
-- [Docker](https://docs.docker.com/engine/installation/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+> This setup uses MySQL for authentication & metadata storage, MongoDB for temporary data storage and MQTT for publishing the data.
 
 ## How to use
 
