@@ -10,6 +10,9 @@ cd concava-setup-mysql-mqtt
 cp .env.example .env
 chmod 600 .env
 # > Edit configuration in .env
+# > Change path to log (by default: './concava.log') in docker-compose.yml
+# > Create log file:
+touch ./concava.log
 docker-compose up -d
 ```
 
